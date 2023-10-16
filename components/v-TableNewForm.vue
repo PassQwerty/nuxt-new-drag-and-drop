@@ -27,7 +27,7 @@ const createEmptyTable = () =>{
 
 <style scoped>
 .formWrapper {
-    @apply p-8 sticky top-0 bg-slate-50 flex justify-center items-center border-b-2 border-slate-300;
+    @apply px-4 py-8;
 }
 .form {
   @apply flex justify-between border-2 w-80 rounded-lg;

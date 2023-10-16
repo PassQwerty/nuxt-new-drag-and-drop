@@ -1,6 +1,8 @@
 <template>
-    <div class="initialItems" @drop="dropRow(initialTable)" @dragover.prevent="">
-        <v-table-item v-for="item in initialTable.items" :key="item" :currentTable="initialTable" :item="item" />
+    <div class="wrapperItems" @drop="dropRow(initialTable)" @dragover.prevent="">
+        <div class="initialItems">
+            <v-table-item v-for="item in initialTable.items" :key="item" :currentTable="initialTable" :item="item" />
+        </div>
     </div>
 </template>
 
@@ -17,11 +19,12 @@ const { dropRow } = store
 </script>
 
 <style scoped>
+.wrapperItems{
+    @apply flex-1 overflow-x-auto;
+}
 .initialItems {
-    @apply min-h-[3rem] p-2 flex flex-1 flex-col gap-1;
+    @apply min-h-[3rem] grid grid-cols-2 gap-1;
 }
 
-.initialItems:not(:has(span)) {
-    
-}
+.initialItems:not(:has(span)) {}
 </style>

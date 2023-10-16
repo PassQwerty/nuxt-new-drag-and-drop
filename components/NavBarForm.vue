@@ -32,16 +32,16 @@ const createNewRowHandler = () => {
 }
 
 .form {
-    @apply flex justify-between border-2;
+    @apply flex justify-between border-2 rounded-lg;
 }
 
 .input {
-    @apply p-2 w-full outline-none;
+    @apply p-2 w-full outline-none rounded-l-lg;
 }
 
 .buttonSubmit {
     @apply transition ease-in-out duration-200 
         bg-blue-500 hover:bg-blue-600 active:bg-blue-700
-        text-slate-50 px-3;
+        text-slate-50 px-3 rounded-r-lg;
 }
 </style>
