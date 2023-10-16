@@ -2,11 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body{
-    box-sizing: content-box;
+html,
+body {
+  box-sizing: content-box;
+}
+
+body{
+  @apply bg-slate-50;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }

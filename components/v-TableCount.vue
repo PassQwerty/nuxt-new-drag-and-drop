@@ -1,7 +1,7 @@
 <template>
     <div class="TableCount">
         <span>
-            Число строк: <strong>{{ props.count }}</strong> 
+            Всего строк: <strong>{{ props.count }}</strong> 
         </span>
     </div>
 </template>

@@ -1,7 +1,11 @@
 <template>
-    <div class="Table" >
+    <div class="Table">
         <v-title :currentTable="currentTable" />
-        <v-table-list :currentTable="currentTable" :items="props.items" />
+
+        <div class="TableItems" @drop="dropRow(props.currentTable)" @dragover.prevent="">
+            <v-table-item v-for="item in props.items" :key="item" :currentTable="props.currentTable" :item="item" />
+        </div>
+
         <v-table-count :count="items.length" />
     </div>
 </template>
@@ -22,11 +26,23 @@ const props = defineProps({
     },
 })
 
+import { useTableStore } from '@/store/data'
+
+const store = useTableStore()
+const { dropRow } = store
 
 </script>
 
 <style scoped>
-    .Table{
-        @apply border-2 border-slate-600 flex flex-col;
-    }
+.Table {
+    @apply w-56 border-2 border-slate-600 flex flex-col;
+}
+
+.TableItems {
+    @apply min-h-[3rem] p-2 flex flex-1 flex-col gap-1;
+}
+
+.TableItems:not(:has(span)) {
+    @apply m-2 bg-slate-300 border-dashed border-2 border-slate-500
+}
 </style>
