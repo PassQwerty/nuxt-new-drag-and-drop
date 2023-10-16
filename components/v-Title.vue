@@ -24,6 +24,11 @@ const props = defineProps({
     }
 })
 
+import {useTableStore} from '@/store/data'
+
+const store = useTableStore()
+const { removeTable } = store
+
 const editInput = ref(false)
 
 const changeEditText = () => {
@@ -35,6 +40,11 @@ const changeEditText = () => {
     }
     editInput.value = !editInput.value
 };
+
+const removeTableHandler = () => {
+    const currentIdTable = props.currentTable.id
+    removeTable(currentIdTable);
+}
 
 </script>
 

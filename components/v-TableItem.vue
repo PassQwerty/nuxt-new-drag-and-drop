@@ -56,7 +56,9 @@ const dragStartHandler = () => {
 
 <style scoped>
 .Item {
-    @apply break-words w-full p-1 transition ease-in-out duration-200 cursor-grab bg-blue-400 text-slate-50 border-2 border-dashed select-none border-slate-700;
+    @apply break-words w-full p-1 transition ease-in-out duration-200 
+        cursor-grab bg-blue-400 text-slate-50 border-2 border-dashed 
+        select-none border-slate-700;
 }
 
 .Item:hover {
