@@ -8,9 +8,10 @@ export const useTableStore = defineStore("database", () => {
     id: 0,
     title: "InitialTable",
     items: [
-      { id: 1, title: "InitialTable new row 1" },
-      { id: 2, title: "InitialTable new row 2" },
-      { id: 3, title: "InitialTable new row 3" },
+      { id: 1, title: "Яблоко" },
+      { id: 2, title: "Букварь" },
+      { id: 3, title: "Ананас" },
+      { id: 3, title: "Дыня" },
     ],
   });
 
@@ -59,10 +60,19 @@ export const useTableStore = defineStore("database", () => {
   }
 
   const removeTable = (idTable) => {
-    for (let i = 0; i < tables.value.length; i++) {
+    for (let i = 0; i < tables.value.length; i++) { // ищем таблицу
       const element = tables.value[i];
-      if (element.id === idTable) {
-        tables.value.splice(i, 1);
+
+      if (element.id === idTable) { // находим таблицу
+
+        if(element.items.length > 0){ // проверяем есть ли элементы в удаляемой таблице
+          for (let j = 0; j < element.items.length; j++) { // перекидываем элементы в initialTable
+            const item = element.items[j];
+            createNewRow(item.title)
+          }
+        }
+
+        tables.value.splice(i, 1); // удаляем таблицу
         break;
       }
     }

@@ -7,6 +7,6 @@
 
 <style scoped>
 .navBar {
-    @apply w-[40rem] flex flex-col gap-10 p-4 border-r-2 border-slate-300;
+    @apply w-[28rem] flex flex-col gap-10 p-4 border-r-2 border-slate-300;
 }
 </style>
